@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/hud.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hud")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 800.0
+offset_bottom = 44.0
+theme_override_constants/separation = 34
+
+[node name="HealthLabel" type="Label" parent="TopBar"]
+theme_override_font_sizes/font_size = 22
+text = "HEALTH 5 / 5"
+
+[node name="LevelLabel" type="Label" parent="TopBar"]
+theme_override_font_sizes/font_size = 22
+text = "LEVEL 1"
+
+[node name="EnemiesLabel" type="Label" parent="TopBar"]
+theme_override_font_sizes/font_size = 22
+text = "ALIENS LEFT 0"
+
+[node name="Overlay" type="Control" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="ColorRect" parent="Overlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="Overlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="VBoxContainer" parent="Overlay/Center"]
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Overlay/Center/Panel"]
+theme_override_font_sizes/font_size = 48
+text = "LEVEL COMPLETE"
+horizontal_alignment = 1
+
+[node name="SubLabel" type="Label" parent="Overlay/Center/Panel"]
+theme_override_font_sizes/font_size = 20
+text = ""
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Overlay/Center/Panel"]
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="NextButton" type="Button" parent="Overlay/Center/Panel/Buttons"]
+custom_minimum_size = Vector2(190, 52)
+theme_override_font_sizes/font_size = 22
+text = "NEXT LEVEL"
+
+[node name="RetryButton" type="Button" parent="Overlay/Center/Panel/Buttons"]
+custom_minimum_size = Vector2(190, 52)
+theme_override_font_sizes/font_size = 22
+text = "TRY AGAIN"
+
+[node name="MenuButton" type="Button" parent="Overlay/Center/Panel/Buttons"]
+custom_minimum_size = Vector2(190, 52)
+theme_override_font_sizes/font_size = 22
+text = "MAIN MENU"

@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_menu"]
+
+[node name="MainMenu" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.06, 0.09, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="VBoxContainer" parent="Center"]
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Title" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 52
+text = "SHOOTING GAME"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 18
+text = "Shoot the aliens before they shoot you."
+horizontal_alignment = 1
+
+[node name="FighterLabel" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 15
+text = "YOUR FIGHTER"
+horizontal_alignment = 1
+
+[node name="FighterRow" type="HBoxContainer" parent="Center/Panel"]
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="FighterDesc" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 15
+text = "Balanced all-rounder. 5 HP, steady fire."
+horizontal_alignment = 1
+
+[node name="EnemyLabel" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 15
+text = "ENEMY TYPE"
+horizontal_alignment = 1
+
+[node name="EnemyRow" type="HBoxContainer" parent="Center/Panel"]
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="EnemyDesc" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 15
+text = "Each level keeps its own alien line-up."
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 15
+text = "LEVELS   -   CLICK ONE TO PLAY"
+horizontal_alignment = 1
+
+[node name="LevelGrid" type="GridContainer" parent="Center/Panel"]
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="LevelDesc" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 15
+text = "Click a level number to play it."
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="Center/Panel"]
+theme_override_font_sizes/font_size = 15
+text = "Aim with the mouse   -   Left click or Space to shoot   -   WASD or arrow keys to move   -   Esc quits to menu"
+horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="Center/Panel"]
+custom_minimum_size = Vector2(460, 46)
+theme_override_font_sizes/font_size = 20
+text = "QUIT"
